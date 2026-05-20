@@ -19,6 +19,11 @@
   },
   "homepage": "https://github.com/caestrada1103/tech_assessment#readme",
   "devDependencies": {
-    "cypress": "^15.15.0"
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^1.2.0",
+    "cypress": "^15.15.0",
+    "eslint": "^10.4.0",
+    "eslint-plugin-cypress": "^6.4.1",
+    "prettier": "3.8.3"
   }
 }

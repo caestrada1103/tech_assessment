@@ -2,7 +2,19 @@
 logs
 *.log
 
+# Cypress specific
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# Node.js dependencies
 node_modules
-cypress/videos
-cypress/screenshots
-js/*.js
+
+### VisualStudioCode ###
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
