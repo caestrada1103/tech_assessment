@@ -10,11 +10,11 @@ module.exports = defineConfig({
 	chromeWebSecurity: false,
 	env: {},
 	e2e: {
-    setupNodeEvents(on, config) {
-      const { plugin: cypressGrepPlugin } = require('@cypress/grep/plugin')
-      cypressGrepPlugin(config)
-      return config
-    },
+		setupNodeEvents(on, config) {
+			const { plugin: cypressGrepPlugin } = require('@cypress/grep/plugin');
+			cypressGrepPlugin(config);
+			return config;
+		},
 		baseUrl: 'https://demoqa.com/',
 	},
 });

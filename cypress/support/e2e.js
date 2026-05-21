@@ -15,8 +15,8 @@
 
 /// <reference types="cypress" />
 // Import commands.js using CommonJS syntax:
-require('./commands')
+require('./commands');
 
 // cypress/support/e2e.js
-const { register: registerCypressGrep } = require('@cypress/grep')
-registerCypressGrep()
+const { register: registerCypressGrep } = require('@cypress/grep');
+registerCypressGrep();
