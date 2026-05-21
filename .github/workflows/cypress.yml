@@ -11,10 +11,18 @@ on:
         required: false
         default: ''
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   cypress-run:
     name: Run Cypress Tests
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-pages.outputs.page_url }}
 
     steps:
       - name: Checkout repository
@@ -37,7 +45,20 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.tags != '' }}
         run: npx cypress run --env grepTags=${{ inputs.tags }}
 
-      - name: Upload HTML report
+      - name: Generate reports index page
+        if: always()
+        run: |
+          echo "<html><head><title>Cypress Reports</title><style>body{font-family:sans-serif;padding:2rem;}a{display:block;margin:.5rem 0;}</style></head><body>" > cypress/reports/index.html
+          echo "<h1>Cypress Test Reports</h1><ul>" >> cypress/reports/index.html
+          for f in cypress/reports/*.html; do
+            name=$(basename "$f")
+            if [ "$name" != "index.html" ]; then
+              echo "<li><a href=\"$name\">$name</a></li>" >> cypress/reports/index.html
+            fi
+          done
+          echo "</ul></body></html>" >> cypress/reports/index.html
+
+      - name: Upload HTML report artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -52,3 +73,18 @@ jobs:
           name: cypress-screenshots
           path: cypress/screenshots/
           retention-days: 7
+
+      - name: Configure GitHub Pages
+        if: always()
+        uses: actions/configure-pages@v5
+
+      - name: Upload pages artifact
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: cypress/reports/
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        id: deploy-pages
+        uses: actions/deploy-pages@v4
