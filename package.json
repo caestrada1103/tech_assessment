@@ -11,7 +11,6 @@
 		"cy:open": "cypress open",
 		"cy:run": "cypress run",
 		"cy:run:tag": "cypress run --env grepTags=",
-		"cy:run:report": "cypress run",
 		"report:clean": "if exist cypress\\reports rmdir /s /q cypress\\reports"
 	},
 	"repository": {
