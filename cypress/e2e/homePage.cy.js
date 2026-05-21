@@ -19,8 +19,8 @@ describe('Home page', { tags: ['@smoke', '@homePage'] }, () => {
 	it('should have a working navigation menu', () => {
 		homePage.getLinkForCategoryCards().should('have.length', CATEGORIES_CARD.length);
 		homePage.getLinkForCategoryCards().each((list, index) => {
+			cy.wrap(list).scrollIntoView();
 			cy.wrap(list)
-				.scrollIntoView()
 				.should('have.attr', 'href')
 				.should('be.visible')
 				.should('have.text', CATEGORIES_CARD[index]);
@@ -35,7 +35,7 @@ describe('Home page', { tags: ['@smoke', '@homePage'] }, () => {
 		homePage.getFooter().should('be.visible').should('have.text', '© 2013-2026 TOOLSQA.COM | ALL RIGHTS RESERVED.');
 	});
 
-	CATEGORIES_CARD.forEach((category, i) => {
+	CATEGORIES_CARD.forEach((category) => {
 		it(`should navigate to the correct page when clicking on ${category} card`, () => {
 			const expectedUrl = URL_CATEGORY_MAP[category] ?? category.toLowerCase().replace(/,|\s/g, '');
 			homePage.getCategoryCardLink(category).scrollIntoView().should('be.visible').click();
