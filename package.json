@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:tag": "cypress run --env grepTags="
   },
   "repository": {
     "type": "git",
@@ -19,6 +23,7 @@
   },
   "homepage": "https://github.com/caestrada1103/tech_assessment#readme",
   "devDependencies": {
+    "@cypress/grep": "^6.0.0",
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^1.2.0",
     "cypress": "^15.15.0",
