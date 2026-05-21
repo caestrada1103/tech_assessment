@@ -18,7 +18,9 @@ module.exports = defineConfig({
 		inlineAssets: true,
 		saveAllAttempts: false,
 	},
-	env: {},
+	env: {
+		BOOK_API_URL: 'https://demoqa.com/BookStore/v1/Book',
+	},
 	e2e: {
 		setupNodeEvents(on, config) {
 			require('cypress-mochawesome-reporter/plugin')(on);
