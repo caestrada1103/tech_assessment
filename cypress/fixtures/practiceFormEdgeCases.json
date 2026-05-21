@@ -1,0 +1,16 @@
+{
+	"invalidEmailData": {
+		"firstName": "Invalid",
+		"lastName": "Email",
+		"email": "invalid-email",
+		"gender": "Male",
+		"mobile": "9876543210"
+	},
+	"shortMobileData": {
+		"firstName": "Short",
+		"lastName": "Number",
+		"email": "short.mobile@example.com",
+		"gender": "Female",
+		"mobile": "12345"
+	}
+}

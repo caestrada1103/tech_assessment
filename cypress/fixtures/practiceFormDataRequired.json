@@ -1,0 +1,23 @@
+[
+	{
+		"firstName": "John",
+		"lastName": "Doe",
+		"email": "john.doe@example.com",
+		"gender": "Male",
+		"mobile": "1234567890"
+	},
+	{
+		"firstName": "Maria",
+		"lastName": "Gonzalez",
+		"email": "maria.gonzalez@example.com",
+		"gender": "Female",
+		"mobile": "2345678901"
+	},
+	{
+		"firstName": "Alex",
+		"lastName": "Taylor",
+		"email": "alex.taylor@example.com",
+		"gender": "Other",
+		"mobile": "3456789012"
+	}
+]
