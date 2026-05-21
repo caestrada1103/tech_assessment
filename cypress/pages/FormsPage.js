@@ -1,4 +1,4 @@
-const { FORMS_PRACTICE_FORM_PATH } = require("../support/constants/formsPage");
+const { FORMS_PRACTICE_FORM_PATH } = require('../support/constants/formsPage');
 
 class FormsPage {
 	constructor() {
@@ -181,7 +181,7 @@ class FormsPage {
 		if (dateOfBirth) {
 			this.getSubmittedValueByLabel('Date of Birth').should(
 				'have.text',
-				`${dateOfBirth.day.padStart(2, '0')} ${dateOfBirth.month},${dateOfBirth.year}`
+				`${dateOfBirth.day.padStart(2, '0')} ${dateOfBirth.month},${dateOfBirth.year}`,
 			);
 		}
 		if (subjects) {

@@ -19,7 +19,7 @@ describe('Home page', { tags: ['@smoke', '@homePage'] }, () => {
 	it('should have a working navigation menu', () => {
 		homePage.getLinkForCategoryCards().should('have.length', CATEGORIES_CARD.length);
 		homePage.getLinkForCategoryCards().each((list, index) => {
-			cy.wrap(list).scrollIntoView()
+			cy.wrap(list).scrollIntoView();
 			cy.wrap(list).should('be.visible').should('have.text', CATEGORIES_CARD[index]);
 			cy.wrap(list).should('have.attr', 'href');
 		});

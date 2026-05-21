@@ -1,7 +1,7 @@
 {
 	"useTabs": true,
 	"tabWidth": 4,
-	"endOfLine": "auto",
+	"endOfLine": "crlf",
 	"trailingComma": "all",
 	"semi": true,
 	"singleQuote": true,
