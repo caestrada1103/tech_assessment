@@ -7,6 +7,9 @@ cypress/screenshots/
 cypress/videos/
 cypress/downloads/
 
+# Reports
+cypress/reports/
+
 # Node.js dependencies
 node_modules
 
