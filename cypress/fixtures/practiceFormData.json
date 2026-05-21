@@ -1,0 +1,35 @@
+[
+	{
+		"firstName": "John",
+		"lastName": "Doe",
+		"email": "john.doe@example.com",
+		"gender": "Male",
+		"mobile": "1234567890",
+		"dateOfBirth": { "day": "15", "month": "January", "year": "1990" },
+		"subjects": ["Maths"],
+		"hobbies": ["Sports", "Reading"],
+		"picture": "example.json"
+	},
+	{
+		"firstName": "Maria",
+		"lastName": "Gonzalez",
+		"email": "maria.gonzalez@example.com",
+		"gender": "Female",
+		"mobile": "2345678901",
+		"dateOfBirth": { "day": "22", "month": "March", "year": "1995" },
+		"subjects": ["English"],
+		"hobbies": ["Music"],
+		"picture": "example.json"
+	},
+	{
+		"firstName": "Alex",
+		"lastName": "Taylor",
+		"email": "alex.taylor@example.com",
+		"gender": "Other",
+		"mobile": "3456789012",
+		"dateOfBirth": { "day": "8", "month": "July", "year": "2000" },
+		"subjects": ["Physics"],
+		"hobbies": ["Sports", "Music"],
+		"picture": "example.json"
+	}
+]

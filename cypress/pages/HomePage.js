@@ -1,29 +1,29 @@
 class HomePage {
 	constructor() {
-		this.homeBannerImage = cy.get('.banner-image');
-		this.homeHeaderImage = cy.get('header').get('img');
-		this.linkForCategoryCards = cy.get('.category-cards').find('a');
-		this.footer = cy.get('footer');
+		this.homeBannerImage = () => cy.get('.banner-image');
+		this.homeHeaderImage = () => cy.get('header').get('img');
+		this.linkForCategoryCards = () => cy.get('.category-cards').find('a');
+		this.footer = () => cy.get('footer');
 	}
 
 	getLinkForCategoryCards() {
-		return this.linkForCategoryCards;
+		return this.linkForCategoryCards();
 	}
 
 	getHomeHeaderImage() {
-		return this.homeHeaderImage;
+		return this.homeHeaderImage();
 	}
 
 	getHomeBannerImage() {
-		return this.homeBannerImage;
+		return this.homeBannerImage();
 	}
 
 	getFooter() {
-		return this.footer;
+		return this.footer();
 	}
 
 	getCategoryCardLink(category) {
-		return this.linkForCategoryCards.contains(category);
+		return this.linkForCategoryCards().contains(category);
 	}
 }
 

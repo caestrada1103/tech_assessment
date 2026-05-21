@@ -1,0 +1,9 @@
+const FORMS_ACCORDION_SECTION = 'Forms';
+const FORMS_PRACTICE_FORM_ITEM = 'Practice Form';
+const FORMS_PRACTICE_FORM_PATH = 'automation-practice-form';
+
+module.exports = {
+	FORMS_ACCORDION_SECTION,
+	FORMS_PRACTICE_FORM_ITEM,
+	FORMS_PRACTICE_FORM_PATH,
+};
