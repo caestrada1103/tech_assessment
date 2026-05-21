@@ -1,0 +1,54 @@
+name: Cypress Test Suite
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Filter tests by tag (e.g. @smoke, @forms, @homePage). Leave empty to run all tests.'
+        required: false
+        default: ''
+
+jobs:
+  cypress-run:
+    name: Run Cypress Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run all tests (no tag filter)
+        if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.tags == '') }}
+        run: npx cypress run
+
+      - name: Run tests filtered by tag
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.tags != '' }}
+        run: npx cypress run --env grepTags=${{ inputs.tags }}
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-report
+          path: cypress/reports/
+          retention-days: 14
+
+      - name: Upload screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots/
+          retention-days: 7
