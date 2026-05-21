@@ -10,7 +10,8 @@
 		"format:check": "prettier . --check",
 		"cy:open": "cypress open",
 		"cy:run": "cypress run",
-		"cy:run:tag": "cypress run --env grepTags="
+		"cy:run:tag": "cypress run --env grepTags=",
+		"report:clean": "if exist cypress\\reports rmdir /s /q cypress\\reports"
 	},
 	"repository": {
 		"type": "git",
@@ -29,6 +30,7 @@
 		"@eslint/js": "^10.0.1",
 		"@eslint/json": "^1.2.0",
 		"cypress": "^15.15.0",
+		"cypress-mochawesome-reporter": "^4.0.2",
 		"eslint": "^10.4.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-cypress": "^6.4.1",

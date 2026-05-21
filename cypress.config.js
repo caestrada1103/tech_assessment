@@ -8,9 +8,20 @@ module.exports = defineConfig({
 	responseTimeout: 20000,
 	requestTimeout: 1000,
 	chromeWebSecurity: false,
+	reporter: 'cypress-mochawesome-reporter',
+	reporterOptions: {
+		reportDir: 'cypress/reports',
+		reportFilename: '[status]_[name]-report',
+		overwrite: false,
+		html: true,
+		json: true,
+		inlineAssets: true,
+		saveAllAttempts: false,
+	},
 	env: {},
 	e2e: {
 		setupNodeEvents(on, config) {
+			require('cypress-mochawesome-reporter/plugin')(on);
 			const { plugin: cypressGrepPlugin } = require('@cypress/grep/plugin');
 			cypressGrepPlugin(config);
 			return config;

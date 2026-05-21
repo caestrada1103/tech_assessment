@@ -1,9 +1,11 @@
-const { FORMS_PRACTICE_FORM_PATH } = require('../support/constants/formsPage');
+const {
+	FORMS_PRACTICE_FORM_PATH,
+	FORMS_ACCORDION_SECTION,
+	FORMS_PRACTICE_FORM_ITEM,
+} = require('../support/constants/formsPage');
 
 class FormsPage {
 	constructor() {
-		this.formsAccordionSection = 'Forms';
-		this.practiceFormItem = 'Practice Form';
 		this.accordionHeaders = () => cy.get('.left-pannel .header-wrapper');
 		this.menuItems = () => cy.get('.left-pannel .menu-list li');
 		this.firstNameInput = () => cy.get('#firstName');
@@ -90,16 +92,16 @@ class FormsPage {
 	}
 
 	openPracticeFormFromLeftMenu() {
-		this.clickMenuItem(this.practiceFormItem);
+		this.clickMenuItem(FORMS_PRACTICE_FORM_ITEM);
 		cy.url().should('include', `/${FORMS_PRACTICE_FORM_PATH}`);
 	}
 
 	assertFormsAccordionExpanded() {
-		this.getAccordionList(this.formsAccordionSection).should('have.class', 'show').and('be.visible');
+		this.getAccordionList(FORMS_ACCORDION_SECTION).should('have.class', 'show').and('be.visible');
 	}
 
 	assertPracticeFormOptionVisible() {
-		this.getMenuItem(this.practiceFormItem).should('be.visible');
+		this.getMenuItem(FORMS_PRACTICE_FORM_ITEM).should('be.visible');
 	}
 
 	getFirstNameInput() {

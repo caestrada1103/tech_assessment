@@ -16,7 +16,6 @@
 /// <reference types="cypress" />
 // Import commands.js using CommonJS syntax:
 require('./commands');
-
-// cypress/support/e2e.js
+require('cypress-mochawesome-reporter/register');
 const { register: registerCypressGrep } = require('@cypress/grep');
 registerCypressGrep();
