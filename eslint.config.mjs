@@ -1,5 +1,6 @@
 import js from '@eslint/js';
 import json from '@eslint/json';
+import eslintConfigPrettier from 'eslint-config-prettier';
 import { defineConfig } from 'eslint/config';
 import pluginCypress from 'eslint-plugin-cypress';
 
@@ -30,4 +31,5 @@ export default defineConfig([
 	},
 	{ files: ['**/*.js'], languageOptions: { sourceType: 'script' } },
 	{ files: ['**/*.json'], plugins: { json }, language: 'json/json', extends: ['json/recommended'] },
+	eslintConfigPrettier,
 ]);
