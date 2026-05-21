@@ -45,6 +45,14 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.tags != '' }}
         run: npx cypress run --env grepTags=${{ inputs.tags }}
 
+      - name: Rename report with date and run number
+        if: always()
+        run: |
+          run_date=$(date +%Y-%m-%d)
+          for f in cypress/reports/*.html; do
+            mv "$f" "cypress/reports/${run_date}_run${{ github.run_number }}_$(basename "$f")"
+          done
+
       - name: Generate reports index page
         if: always()
         run: |
