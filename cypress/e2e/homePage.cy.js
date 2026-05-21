@@ -1,7 +1,7 @@
 const HomePage = require('../pages/HomePage');
 const { CATEGORIES_CARD, URL_CATEGORY_MAP } = require('../support/constants/homePages');
 
-describe('Home page', () => {
+describe('Home page', { tags: ['@smoke', '@homePage'] }, () => {
 	let homePage;
 	beforeEach(() => {
 		cy.visit(Cypress.config('baseUrl'));
