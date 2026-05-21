@@ -1,29 +1,37 @@
 {
-  "name": "tech_assessment",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/caestrada1103/tech_assessment.git"
-  },
-  "keywords": [],
-  "author": "Carlos Estrada",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/caestrada1103/tech_assessment/issues"
-  },
-  "homepage": "https://github.com/caestrada1103/tech_assessment#readme",
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@eslint/json": "^1.2.0",
-    "cypress": "^15.15.0",
-    "eslint": "^10.4.0",
-    "eslint-plugin-cypress": "^6.4.1",
-    "prettier": "3.8.3"
-  }
+	"name": "tech_assessment",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier . --write",
+		"format:check": "prettier . --check",
+		"cy:open": "cypress open",
+		"cy:run": "cypress run",
+		"cy:run:tag": "cypress run --env grepTags="
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/caestrada1103/tech_assessment.git"
+	},
+	"keywords": [],
+	"author": "Carlos Estrada",
+	"license": "ISC",
+	"type": "commonjs",
+	"bugs": {
+		"url": "https://github.com/caestrada1103/tech_assessment/issues"
+	},
+	"homepage": "https://github.com/caestrada1103/tech_assessment#readme",
+	"devDependencies": {
+		"@cypress/grep": "^6.0.0",
+		"@eslint/js": "^10.0.1",
+		"@eslint/json": "^1.2.0",
+		"cypress": "^15.15.0",
+		"eslint": "^10.4.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-cypress": "^6.4.1",
+		"prettier": "3.8.3"
+	}
 }
